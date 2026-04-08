@@ -27,9 +27,9 @@ class OracleBrain:
             max_output_tokens=8192,
         )
 
-        # We use gemini-1.5-pro by defaults as per specifications
+        # We use gemini-1.5-flash to ensure compatibility and speed
         self.model = genai.GenerativeModel(
-            model_name="gemini-1.5-pro",
+            model_name="gemini-1.5-flash",
             system_instruction=ORACLE_SYSTEM_PROMPT,
             tools=tools if tools else None,
             generation_config=generation_config,
